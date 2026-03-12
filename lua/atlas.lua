@@ -464,9 +464,9 @@ local function set_highlights()
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopePromptNormal = { link = "TelescopeNormal" },
 		TelescopePromptPrefix = { fg = palette.subtle },
-		TelescopeSelection = { fg = palette.text, bg = "NONE", bold = false },
-		TelescopeTitle = { fg = palette.foam, bold = styles.bold },
-		TelescopeSelectionCaret = { fg = "red", bg = "red" },
+		TelescopeSelection = { fg = palette.text, bg = palette.none, bold = true },
+		TelescopeTitle = { fg = palette.foam, bold = false },
+		TelescopeSelectionCaret = { fg = "white", bg = "red" },
 
 		MiniIconsAzure = { fg = palette.text },
 		MiniIconsBlue = { fg = palette.text },
