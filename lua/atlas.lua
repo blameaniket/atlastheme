@@ -71,11 +71,6 @@ local function set_highlights()
 		["@text.uri"] = { fg = groups.link },
 		["@text.warning"] = { fg = groups.warn },
 		["@todo"] = { link = "Todo" },
-
-		-- lukas-reineke/indent-blankline.nvim
-		IndentBlanklineChar = { fg = palette.muted, nocombine = true },
-		IndentBlanklineSpaceChar = { fg = palette.muted, nocombine = true },
-		IndentBlanklineSpaceCharBlankline = { fg = palette.muted, nocombine = true },
 	}
 	local default_highlights = {
 		ColorColumn = { bg = palette.surface },
@@ -142,7 +137,7 @@ local function set_highlights()
 		TabLineFill = { bg = groups.panel },
 		TabLineSel = { fg = palette.text, bg = palette.overlay, bold = styles.bold },
 		Title = { fg = palette.foam, bold = styles.bold },
-		VertSplit = { fg = groups.border },
+		VertSplit = { fg = "#212121", bg = "#212121" },
 		Visual = { bg = palette.iris, blend = 15 },
 		-- VisualNOS = {},
 		WarningMsg = { fg = groups.warn, bold = styles.bold },
@@ -150,7 +145,7 @@ local function set_highlights()
 		WildMenu = { link = "IncSearch" },
 		WinBar = { fg = palette.subtle, bg = groups.panel },
 		WinBarNC = { fg = palette.muted, bg = groups.panel, blend = 60 },
-		WinSeparator = { fg = groups.border },
+		WinSeparator = { fg = "#212121", bg = "#212121" },
 
 		DiagnosticError = { fg = groups.error },
 		DiagnosticHint = { fg = groups.hint },
@@ -466,7 +461,7 @@ local function set_highlights()
 		TelescopePromptPrefix = { fg = palette.subtle },
 		TelescopeSelection = { fg = palette.text, bg = palette.none, bold = true },
 		TelescopeTitle = { fg = palette.foam, bold = false },
-		TelescopeSelectionCaret = { fg = "white", bg = "red" },
+		TelescopeSelectionCaret = { fg = "NONE", bg = "NONE" },
 
 		MiniIconsAzure = { fg = palette.text },
 		MiniIconsBlue = { fg = palette.text },
