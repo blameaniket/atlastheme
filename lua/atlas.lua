@@ -457,7 +457,7 @@ local function set_highlights()
 		TelescopeBorder = make_border(),
 		TelescopeMatching = { fg = palette.rose },
 		TelescopeNormal = { link = "NormalFloat" },
-		TelescopePromptNormal = { link = "TelescopeNormal" },
+		TelescopePromptNormal = { bg = palette.base },
 		TelescopePromptPrefix = { fg = palette.subtle },
 		TelescopeSelection = { fg = palette.text, bg = palette.none, bold = true },
 		TelescopeTitle = { fg = palette.foam, bold = false },
@@ -646,6 +646,5 @@ end
 function M.setup(options)
 	config.extend_options(options or {})
 end
-
 
 return M
