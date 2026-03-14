@@ -457,9 +457,9 @@ local function set_highlights()
 		TelescopeBorder = make_border(),
 		TelescopeMatching = { fg = palette.rose },
 		TelescopeNormal = { link = "NormalFloat" },
-		TelescopePromptNormal = { bg = palette.base },
+		TelescopePromptNormal = { bg = "#212121" },
 		TelescopePromptPrefix = { fg = palette.subtle },
-		TelescopeSelection = { fg = palette.text, bg = palette.none, bold = true },
+		TelescopeSelection = { fg = palette.text, bg = palette.none, bold = false },
 		TelescopeTitle = { fg = palette.foam, bold = false },
 		TelescopeSelectionCaret = { fg = "NONE", bg = "NONE" },
 
@@ -477,15 +477,10 @@ local function set_highlights()
 		CopilotSuggestion = { fg = palette.muted, italic = styles.italic },
 
 		-- nvim-treesitter/nvim-treesitter-context
-		TreesitterContext = { bg = palette.overlay },
-		TreesitterContextLineNumber = { fg = palette.rose, bg = palette.overlay },
-
-		-- RRethy/vim-illuminate
-		IlluminatedWordRead = { link = "LspReferenceRead" },
-		IlluminatedWordText = { link = "LspReferenceText" },
-		IlluminatedWordWrite = { link = "LspReferenceWrite" },
-
+		TreesitterContext = { bg = "NONE" },
+		TreesitterContextLineNumber = { fg = palette.rose, bg = "NONE" },
 	}
+
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
 		DiagnosticVirtualTextHint = { fg = groups.hint },
