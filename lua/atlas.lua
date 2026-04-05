@@ -91,7 +91,7 @@ local function set_highlights()
 		diffChanged = { link = "DiffChange" },
 		diffRemoved = { link = "DiffDelete" },
 		Directory = { fg = palette.foam, bold = styles.bold },
-		-- EndOfBuffer = {},
+		EndOfBuffer = { bg = "NONE", fg = palette.base },
 		ErrorMsg = { fg = groups.error, bold = styles.bold },
 		FloatBorder = make_border(),
 		FloatTitle = { fg = palette.foam, bg = groups.panel, bold = styles.bold },
@@ -145,6 +145,7 @@ local function set_highlights()
 		WildMenu = { link = "IncSearch" },
 		WinBar = { fg = palette.subtle, bg = groups.panel },
 		WinBarNC = { fg = palette.muted, bg = groups.panel, blend = 60 },
+		WinSeparator = { fg = "#212121", bg = "#212121" },
 		WinSeparator = { fg = "#212121", bg = "#212121" },
 
 		DiagnosticError = { fg = groups.error },
