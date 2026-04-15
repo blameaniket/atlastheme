@@ -1,99 +1,79 @@
 local options = require("atlas.config").options
-local variants = {
-	-- main = {
-	-- 	_nc = "#16141f",
-	-- 	base = "#191724",
-	-- 	surface = "#1f1d2e",
-	-- 	overlay = "#26233a",
-	-- 	muted = "#6e6a86",
-	-- 	subtle = "#908caa",
-	-- 	text = "#e0def4",
-	-- 	love = "#eb6f92",
-	-- 	gold = "#f6c177",
-	-- 	rose = "#ebbcba",
-	-- 	pine = "#31748f",
-	-- 	foam = "#9ccfd8",
-	-- 	iris = "#c4a7e7",
-	-- 	leaf = "#95b1ac",
-	-- 	highlight_low = "#21202e",
-	-- 	highlight_med = "#403d52",
-	-- 	highlight_high = "#524f67",
-	-- 	none = "NONE",
-	-- },
-	minimal = {
-		_nc = "#1f1d30",
-		base = "#232136",
-		surface = "#2a273f",
-		overlay = "#393552",
-		muted = "#6e6a86",
-		subtle = "#908caa",
-		text = "#e0def4",
-		love = "#eb6f92",
-		gold = "#f6c177",
-		rose = "#ea9a97",
-		pine = "#3e8fb0",
-		foam = "#9ccfd8",
-		iris = "#c4a7e7",
-		leaf = "#95b1ac",
-		highlight_low = "#2a283e",
-		highlight_med = "#44415a",
-		highlight_high = "#56526e",
-		none = "NONE",
-	},
-	dawn = {
-		_nc = "#f8f0e7",
-		base = "#faf4ed",
-		surface = "#fffaf3",
-		overlay = "#f2e9e1",
-		muted = "#9893a5",
-		subtle = "#797593",
-		text = "#464261",
-		love = "#b4637a",
-		gold = "#ea9d34",
-		rose = "#d7827e",
-		pine = "#286983",
-		foam = "#56949f",
-		iris = "#907aa9",
-		leaf = "#6d8f89",
-		highlight_low = "#f4ede8",
-		highlight_med = "#dfdad9",
-		highlight_high = "#cecacd",
-		none = "NONE",
-	},
-	main = {
-		_nc = "#111111",
-		base = "#212121",
-		surface = "#212121",
-		overlay = "#212121",
-		muted = "#6e6a86",
-		subtle = "#908caa",
-		text = "#e0def4",
-		love = "#e0def4",
-		gold = "#e0def4",
-		rose = "#e0def4",
-		pine = "#e0def4",
-		foam = "#e0def4",
-		iris = "#e0def4",
-		leaf = "#e0def4",
-		highlight_low = "#2a283e",
-		highlight_med = "#44415a",
-		highlight_high = "#56526e",
-		none = "NONE",
 
-	}
+local hsl_util = require("atlas.hsl")
+local hsl = hsl_util.hslToHex
+
+local variants = {
+    main = {
+        _nc = "#ffffff",
+        base = "#212121",
+        surface = "#212121",
+        overlay = "#212121",
+        muted = hsl(0, 0, 40),
+        subtle = hsl(0, 0, 50),
+        text = hsl(0, 0, 80),
+        love = hsl(0, 0, 70),
+        gold = hsl(0, 0, 70),
+        rose = hsl(0, 0, 70),
+        pine = hsl(0, 0, 70),
+        foam = hsl(0, 0, 70),
+        iris = hsl(0, 0, 70),
+        leaf = hsl(0, 0, 70),
+        none = "NONE",
+    },
+    minimal = {
+        _nc = "#1f1d30",
+        base = "#232136",
+        surface = "#2a273f",
+        overlay = "#393552",
+        muted = "#6e6a86",
+        subtle = "#908caa",
+        text = "#e0def4",
+        love = "#eb6f92",
+        gold = "#f6c177",
+        rose = "#ea9a97",
+        pine = "#3e8fb0",
+        foam = "#9ccfd8",
+        iris = "#c4a7e7",
+        leaf = "#95b1ac",
+        highlight_low = "#2a283e",
+        highlight_med = "#44415a",
+        highlight_high = "#56526e",
+        none = "NONE",
+    },
+    dawn = {
+        _nc = "#f8f0e7",
+        base = "#faf4ed",
+        surface = "#fffaf3",
+        overlay = "#f2e9e1",
+        muted = "#9893a5",
+        subtle = "#797593",
+        text = "#464261",
+        love = "#b4637a",
+        gold = "#ea9d34",
+        rose = "#d7827e",
+        pine = "#286983",
+        foam = "#56949f",
+        iris = "#907aa9",
+        leaf = "#6d8f89",
+        highlight_low = "#f4ede8",
+        highlight_med = "#dfdad9",
+        highlight_high = "#cecacd",
+        none = "NONE",
+    },
 }
 
 if options.palette ~= nil and next(options.palette) then
-	-- handle variant specific overrides
-	for variant_name, override_palette in pairs(options.palette) do
-		if variants[variant_name] then
-			variants[variant_name] = vim.tbl_extend("force", variants[variant_name], override_palette or {})
-		end
-	end
+    -- handle variant specific overrides
+    for variant_name, override_palette in pairs(options.palette) do
+        if variants[variant_name] then
+            variants[variant_name] = vim.tbl_extend("force", variants[variant_name], override_palette or {})
+        end
+    end
 end
 
 if variants[options.variant] ~= nil then
-	return variants[options.variant]
+    return variants[options.variant]
 end
 
 return vim.o.background == "light" and variants.dawn or variants[options.dark_variant or "main"]
