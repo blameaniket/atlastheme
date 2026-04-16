@@ -2,21 +2,6 @@
   <img src="assets/screenshot.png" width="800"/>
 </p>
 
-<!-- <p align="center"> -->
-<!--   <img src="https://img.shields.io/badge/Neovim-0.8+-57A143?style=for-the-badge&logo=neovim" /> -->
-<!--   <img src="https://img.shields.io/badge/Made%20with-Lua-blue?style=for-the-badge&logo=lua" /> -->
-<!--   <img src="https://img.shields.io/github/license/aniketmondal092009/atlastheme?style=for-the-badge" /> -->
-<!-- </p> -->
-
-<!---->
-<!-- **✨ Features** -->
-<!---->
-<!-- - Minimal and clean color palette -->
-<!-- - Monochrome -->
-<!-- - Fully written in **Lua** -->
-<!-- - Designed for modern **Neovim** -->
-<!-- - Inspired by the original [atlas.vim](https://github.com/huyvohcmc/atlas.vim) colorscheme -->
-<!---->
 
 Atlas theme is a monochrome colorscheme, written in lua for neovim.
 This colorscheme is inspired by the original [atlas.vim](https://github.com/huyvohcmc/atlas.vim) 
@@ -28,14 +13,13 @@ Currently, it only supports `telescope.nvim` and `treesitter-context`. Feel free
 to add the additional support for all other plugins.
 
 
-<!-- ## 📦 Installation -->
 ## Installation
 
 Install using `lazy.nvim`
 
 ```lua
 return {
-  "aniketmondal092009/atlastheme",
+  "blameaniket/atlastheme",
   name = "atlastheme",
 
   -- load the colorscheme before 
