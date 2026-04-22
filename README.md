@@ -60,6 +60,9 @@ require("atlas").setup({
 
 vim.cmd([[colorscheme atlas]])
 ```
+Don't forget to call `setup()` if you want your custom colors to be loaded
+
+See :help atlas.txt for more information
 
 ## Contributing
 
